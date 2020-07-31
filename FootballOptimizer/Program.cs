@@ -47,7 +47,6 @@ namespace FootballOptimizer
         {
             // Loop through the strikers to find who can score. Have them "score" by incrementing their goals and decrementing their energy
             // Problem is simplified as the goalie's energy only changes on a failed attempt to score, so just keep scoring until no strikers can score anymore.
-            Striker lastSlastStriker = strikers.Last();
             while (goalie._energy > 1)
             {
                 foreach (Striker striker in strikers)
