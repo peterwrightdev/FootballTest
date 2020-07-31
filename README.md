@@ -12,7 +12,7 @@ So, I defined class structure to match this. All Footballers have an energy prop
 After that, it was a case of iterating over Strikers to see when they could score and update their properties as appropriate. With some consideration, noted that when a Striker scores, the game state only changes for that Striker, not for any other footballer. This lead to the logic of "if a striker can score, they should do so until they can no longer score. The order of strikers scoring does not matter".
 In a more complex case, we would need to consider the optimal order in which Strikers should take their shots to maximise the total score. For example, if the goalie lost energy on every scored goal, then there would be cases where it would be better for the team for a striker who could score to let another striker shoot first. In this example though, that was not the case.
 
-The solution does not fundamentally change when adding more than two strikers, as the striker's actions are independent, so included logic to support as many strikers as desired, though only one goalie. Should not matter to result.
+The solution does not fundamentally change when adding more than two strikers, as the striker's actions are independent, so wrote logic to support as many strikers as desired, with only one goalie (assuming the last energy level supplied belongs to the goalie and all earlier values belong to Strikers).
 
 Tested solution manually against examples provided in test and also wrote unit tests to verify the functionality of the calculation (separated out from logic to read input from command line).
 
